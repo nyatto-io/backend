@@ -139,7 +139,7 @@ class Gogoanime implements AnimeDriver
                     $title = $genre['title'];
                     $url = $genre['url'];
                     if (Genre::anime()->title($title)->count() === 0) {
-                        Genre::create(['group' => 'gogoanime', 'title' => $title, 'url' => $url]);
+                        Genre::create(['group' => 'gogoanime', 'title' => $title, 'url' => $url, 'type' => 'anime']);
                     }
                 }
                 $genresDone = true;

@@ -75,7 +75,7 @@ class Webtoon implements MangaDriver
                     $title = $genre['title'];
                     $url = $genre['url'];
                     if (Genre::manga()->title($title)->count() === 0) {
-                        Genre::create(['group' => 'webtoon', 'title' => $title, 'url' => $url]);
+                        Genre::create(['group' => 'webtoon', 'title' => $title, 'url' => $url, 'type' => 'manga']);
                     }
                 }
             }

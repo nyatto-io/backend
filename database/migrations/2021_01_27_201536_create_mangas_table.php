@@ -18,7 +18,7 @@ class CreateMangasTable extends Migration
             $table->string('group')->index();
             $table->string('genres')->nullable();
             $table->string('rating');
-            $table->string('title')->unique();
+            $table->string('title')->index();
             $table->string('status')->nullable();
             $table->string('url');
             $table->timestamps();

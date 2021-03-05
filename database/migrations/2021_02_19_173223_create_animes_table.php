@@ -17,7 +17,7 @@ class CreateAnimesTable extends Migration
             $table->id();
             $table->string('group')->index();
             $table->string('genres')->nullable()->index();
-            $table->string('title')->unique();
+            $table->string('title')->index();
             $table->string('status')->nullable();
             $table->string('url');
             $table->timestamps();
