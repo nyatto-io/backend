@@ -180,7 +180,7 @@ return [
         App\Providers\MangaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\SanctumServiceProvider::class,
-
+        App\Providers\StorageServiceProvider::class,
     ],
 
     /*

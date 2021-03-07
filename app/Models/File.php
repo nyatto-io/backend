@@ -64,7 +64,7 @@ class File extends Model
         return new self([
             'type' => $mime,
             'name' => $file->getFilename(),
-            'path' => $file->store(sprintf('files/%s', static::convertMimeToExtension($mime))),
+            'path' => $file->store(sprintf('%s', static::convertMimeToExtension($mime))),
             'size' => $file->getSize(),
         ]);
     }
@@ -99,7 +99,7 @@ class File extends Model
         $data['type'] = (new finfo(FILEINFO_MIME_TYPE))->buffer($binary);
         $extension = static::convertMimeToExtension($data['type']);
         $data['name'] = static::generateFileName($data['type']);
-        $path = sprintf("files/%s/%s", $extension, $data['name']);
+        $path = sprintf("%s/%s", $extension, $data['name']);
         $data['path'] = $path;
         $data['size'] = strlen($binary);
         Storage::put($path, $binary);
@@ -107,7 +107,7 @@ class File extends Model
     }
 
     /**
-     * Alias for processURL
+     * Alias for `processURL()`
      *
      * @param string $url
      * @param User|null $user
